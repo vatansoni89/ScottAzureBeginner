@@ -1,5 +1,9 @@
-﻿@{
+﻿@model VsHelloAzure.Models.Emp
+@using Newtonsoft.Json
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <h3>Hello! Vatan</h3>
+
+<h1>Beginning </h1> @JsonConvert.SerializeObject(Model)

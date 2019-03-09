@@ -12,7 +12,8 @@ namespace VsHelloAzure.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            var v = new Emp() { Id = 100, Name = "Hari" };
+            return View(v);
         }
 
         public IActionResult About()
