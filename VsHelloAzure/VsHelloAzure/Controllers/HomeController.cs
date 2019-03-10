@@ -4,16 +4,24 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using VsHelloAzure.Models;
 
 namespace VsHelloAzure.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IConfiguration configuration;
+
+        public HomeController(IConfiguration configuration)
+        {
+            this.configuration = configuration;
+        }
         public IActionResult Index()
         {
-            var v = new Emp() { Id = 100, Name = "Hari" };
-            return View(v);
+            var model = configuration["Greeting"];
+            //var v = new Emp() { Id = 100, Name = "Hari" };
+            return View("Index",model);
         }
 
         public IActionResult About()
