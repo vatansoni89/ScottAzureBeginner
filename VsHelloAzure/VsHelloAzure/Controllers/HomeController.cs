@@ -24,6 +24,11 @@ namespace VsHelloAzure.Controllers
             return View("Index",model);
         }
 
+        public IActionResult Test()
+        {
+            throw new InvalidOperationException("Vatan exception thrown From HomeController-Test.");
+        }
+
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
